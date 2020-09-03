@@ -10,7 +10,7 @@
   height: 44px;
   border-radius: 50%;
   color: $primary-white-color;
-  transition: background-color $duration var$timing-function,
+  transition: background-color $duration $timing-function,
     color $duration $timing-function;
   &:hover,
   &:focus {

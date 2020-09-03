@@ -1,10 +1,20 @@
 .filter {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
 }
-.filter li + li {
-  margin-left: 8px;
+.filter li {
+  margin-bottom: 15px;
+}
+.filter li:not(:last-child) {
+  margin-right: 8px;
 }
 .btn {
   padding-top: 6px;

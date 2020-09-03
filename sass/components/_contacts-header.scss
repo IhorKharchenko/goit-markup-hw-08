@@ -1,15 +1,29 @@
 .contact-nav {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+  @media screen and (max-width: $tablet - 1px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    justify-content: center;
+    margin-left: auto;
+  }
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: center;
+
+    margin-left: auto;
+  }
 }
 
 .contact-nav .link {
   display: flex;
+  justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 18px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: $primary-text-color;
   transition: color $duration $timing-function;
@@ -18,9 +32,26 @@
     color: $accent-color;
     outline: none;
   }
+  @media screen and (min-width: $tablet) {
+    font-size: 12px;
+    line-height: 1.17;
+    justify-content: flex-start;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 .contact-nav .item + .item {
-  margin-left: 30px;
+  @media screen and (max-width: $tablet - 1px) {
+    margin-top: 16px;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: 30px;
+  }
 }
 
 .contact-nav .icon {

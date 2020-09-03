@@ -6,23 +6,35 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity $duration $timing-function;
+  overflow-y: scroll;
+  @media screen and (max-width: $tablet - 1px) {
+    padding: 95px 15px;
+  }
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
-  max-width: 528px;
+  height: auto;
   border-radius: 4px;
   padding: 40px;
   background-color: $primary-white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 528px;
+  }
 }
 .modal-field {
   position: relative;
@@ -108,9 +120,13 @@
   justify-content: center;
   align-items: center;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.16;
   color: $primary-text-color;
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 .policy .checkbox {
   /* -webkit-appearance: none;
@@ -204,10 +220,11 @@
   border-radius: 50%;
   justify-content: center;
   background: $primary-white-color;
-  color: #000000;
+  color: $title-text-color;
   box-sizing: border-box;
   outline: none;
   transition: color $duration $timing-function;
+  fill: currentColor;
   &:hover,
   &:focus {
     color: $accent-color;

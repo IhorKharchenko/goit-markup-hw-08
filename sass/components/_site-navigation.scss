@@ -1,19 +1,23 @@
 .site-nav {
-  display: flex;
-  align-items: center;
+  @media screen and (max-width: $tablet - 1px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+  }
 }
 .site-nav .list {
-  padding-top: 32px;
-  display: flex;
-  align-items: center;
+  @media screen and (min-width: $tablet) {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+  }
 }
 .site-nav .link {
   position: relative;
-  display: block;
-  padding-bottom: 32px;
+  padding-bottom: 14px;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 18px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: $title-text-color;
   transition: color $duration $timing-function;
@@ -22,13 +26,29 @@
     color: $accent-color;
     outline: none;
   }
+  @media screen and (min-width: $tablet) {
+    display: block;
+    font-size: 14px;
+    line-height: 1.14;
+    padding-bottom: 32px;
+  }
+}
+.site-nav .item {
+  display: flex;
+  justify-content: center;
 }
 .site-nav .item + .item {
-  margin-left: 50px;
+  @media screen and (max-width: $tablet - 1px) {
+    margin-top: 40px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: 50px;
+  }
 }
 .link.current {
   position: relative;
   color: $accent-color;
+
   &::after {
     content: "";
     position: absolute;
@@ -42,9 +62,9 @@
     background-position: center;
   }
 }
+
 .site-nav .link:not(.current)::after {
   content: "";
-  display: block;
   position: absolute;
   left: 0;
   bottom: 0;
